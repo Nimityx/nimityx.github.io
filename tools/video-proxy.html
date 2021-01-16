@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Video Proxy</title>
+</head>
+<body>
+<h3>Video Proxy</h3>
+<label>1. simple-php-video-proxy</label>
+<form action="https://videoproxy.miniurl.repl.co/" method="get" target="_blank">
+<input id="input1" placeholder="Enter URL" type="url" required autocomplete="off" autocapitalize="off" autocorrect="off" name="url" value="https://">
+<button type="submit">Go!</button>
+</form>
+<label>2. php-video-proxy</label>
+<form action="https://youtube-downloader3.herokuapp.com/stream.php" method="get" target="_blank">
+<input id="input2" placeholder="Enter URL" type="url" required autocomplete="off" autocapitalize="off" autocorrect="off" name="url" value="https://">
+<button type="submit">Go!</button>
+</form>
+<br>
+<button id="button">Fill with example</button>
+<script>
+document.querySelector("#button").onclick = function() {
+    document.querySelector("#input1").value = "https://content.jwplatform.com/videos/dEWBnwke-wjRis9cb.mp4";
+    document.querySelector("#input2").value = "https://content.jwplatform.com/videos/dEWBnwke-wjRis9cb.mp4";
+}
+</script>
+</body>

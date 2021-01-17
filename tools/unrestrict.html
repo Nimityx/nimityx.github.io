@@ -1524,10 +1524,9 @@
             .then(response => response.text())
             .then(contents => attachReached(contents))
             .catch(() => console.log("Can’t access " + urlggsc + " response. Blocked by browser?"));
-	    var protocol = window.location.protocol;
-            var hostname = location.hostname;
-            document.getElementById('website').setAttribute("onclick", "copyText('" + protocol + "//" + hostname + "/#website'); return false;");
-            document.getElementById('chromebook').setAttribute("onclick", "copyText('" + protocol + "//" + hostname + "/#chromebook'); return false;");
+            var href = location.href;
+            document.getElementById('website').setAttribute("onclick", "copyText('" + href + "#website'); return false;");
+            document.getElementById('chromebook').setAttribute("onclick", "copyText('" + href + "#chromebook'); return false;");
             var urlraw = window.location.href;
             var newurlraw = new URL(urlraw);
             var sectionparamvalue = newurlraw.searchParams.get("section");

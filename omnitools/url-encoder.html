@@ -31,6 +31,7 @@
     	document.querySelector("#urloutput").value = encodeURIComponent(document.querySelector("#urlinput").value);
     }
     function liveModeOn() {
+      document.querySelector("#urloutput").value = encodeURIComponent(document.querySelector("#urlinput").value);
     	document.querySelector("#urlinput").onkeyup = function() {
         	document.querySelector("#urloutput").value = encodeURIComponent(document.querySelector("#urlinput").value);
         }

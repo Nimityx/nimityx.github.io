@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>URL Encoder - OmniTools</title>
+<link href="style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>URL Encoder</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<label for="urlinput" class="label">URL Input</label>
+            <input type="text" id="urlinput" name="urlinput" placeholder="Input URL to encode">
+            <br><br>
+            <label for="switchtoggle">Live Mode: </label>
+          	<label class="switchtoggle" id="switchtoggle">
+            	<input type="checkbox">
+            	<div class="slidertogglerp roundshaped"></div>
+          	</label>
+            <br><br>
+            <label for="urloutput" class="label">Encoded URL:</label>
+            <input type="text" id="urloutput" name="urloutput" placeholder="Encoded URL" readonly>
+            <input type="button" id="encode" value="Encode">
+            <input type="button" id="copy" value="Copy Result">
+        </div>
+    </div>
+  </center>
+  <script>
+  	document.querySelector("#encode").onclick = function() {
+    	document.querySelector("#urloutput").value = encodeURIComponent(document.querySelector("#urlinput").value);
+    }
+    function liveModeOn() {
+    	document.querySelector("#urlinput").onkeyup = function() {
+        	document.querySelector("#urloutput").value = encodeURIComponent(document.querySelector("#urlinput").value);
+        }
+        document.querySelector("#urlinput").onkeydown = function() {
+        	document.querySelector("#urloutput").value = encodeURIComponent(document.querySelector("#urlinput").value);
+        }
+    }
+    function liveModeOff() {
+    	document.querySelector("#urlinput").onkeyup = function() {}
+        document.querySelector("#urlinput").onkeydown = function() {}
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var checkbox = document.querySelector('input[type="checkbox"]');
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          liveModeOn();
+        } else {
+          liveModeOff();
+        }
+      });
+    });
+    document.querySelector("#copy").onclick = function() {
+      	var copyText = document.querySelector("#urloutput");
+      	copyText.select();
+      	copyText.setSelectionRange(0, 99999);
+      	document.execCommand("copy");
+    }
+  </script>
+</body>
+</html>

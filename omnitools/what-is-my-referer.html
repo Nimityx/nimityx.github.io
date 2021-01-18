@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What is my HTTP Referer - Omnitools</title>
+<link href="https://nimityx.github.io/omnitools/style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>What is my HTTP Referer</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<label class="label">Your HTTP referer:</label><br>
+            <label id="referer"></label><br>
+        </div>
+    </div>
+  </center>
+  <script>
+  	if (document.referer == null) {
+		document.getElementById("referer").innerHTML = "No referer / hidden";
+    } else {
+    	document.getElementById("referer").innerHTML = document.referer;
+    }
+  </script>
+</body>
+</html>

@@ -11,10 +11,10 @@
     <div class="maxwidth">
     	<div class="form">
         	<form id="space_remover">
-        	<label for="urlinput" class="label">Text Input:</label>
-            <textarea id="urlinput" name="urlinput" placeholder="Input Text"></textarea>
-            <label for="urloutput" class="label">Result:</label>
-            <textarea id="urloutput" name="urloutput" placeholder="Result" readonly></textarea>
+        	<label for="textinput" class="label">Text Input:</label>
+            <textarea id="textinput" name="textinput" placeholder="Input Text"></textarea>
+            <label for="textoutput" class="label">Result:</label>
+            <textarea id="textoutput" name="textoutput" placeholder="Result" readonly></textarea>
             <input type="button" id="space" value="Remove Space">
             <label for="switchtoggle">Live Mode: </label>
           	<label class="switchtoggle" id="switchtoggle">
@@ -36,32 +36,32 @@
   </center>
   <script>
   	document.querySelector("#space").onclick = function() {
-    	document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+    	document.querySelector("#textoutput").value = document.querySelector("#textinput").value.replace(/ /g,"");
     }
     document.querySelector("#spacelinebreak").onclick = function() {
-    	document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+    	document.querySelector("#textoutput").value = (document.querySelector("#textinput").value.replace(/\n/g,"")).replace(/ /g,"");
     }
     function sliveModeOn() {
-      document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
-    	document.querySelector("#urlinput").onkeyup = function() {
-        	document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+      document.querySelector("#textoutput").value = document.querySelector("#textinput").value.replace(/ /g,"");
+    	document.querySelector("#textinput").onkeyup = function() {
+        	document.querySelector("#textoutput").value = document.querySelector("#textinput").value.replace(/ /g,"");
         }
-        document.querySelector("#urlinput").onkeydown = function() {
-        	document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+        document.querySelector("#textinput").onkeydown = function() {
+        	document.querySelector("#textoutput").value = document.querySelector("#textinput").value.replace(/ /g,"");
         }
     }
     function slbliveModeOn() {
-      document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
-    	document.querySelector("#urlinput").onkeyup = function() {
-        	document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+      document.querySelector("#textoutput").value = (document.querySelector("#textinput").value.replace(/\n/g,"")).replace(/ /g,"");
+    	document.querySelector("#textinput").onkeyup = function() {
+        	document.querySelector("#textoutput").value = (document.querySelector("#textinput").value.replace(/\n/g,"")).replace(/ /g,"");
         }
-        document.querySelector("#urlinput").onkeydown = function() {
-        	document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+        document.querySelector("#textinput").onkeydown = function() {
+        	document.querySelector("#textoutput").value = (document.querySelector("#textinput").value.replace(/\n/g,"")).replace(/ /g,"");
         }
     }
     function liveModeOff() {
-    	document.querySelector("#urlinput").onkeyup = function() {}
-        document.querySelector("#urlinput").onkeydown = function() {}
+    	document.querySelector("#textinput").onkeyup = function() {}
+        document.querySelector("#textinput").onkeydown = function() {}
     }
     document.addEventListener('DOMContentLoaded', function () {
       var checkbox = document.querySelector('input#ispace');
@@ -84,7 +84,7 @@
       });
     });
     document.querySelector("#copy").onclick = function() {
-      	var copyText = document.querySelector("#urloutput");
+      	var copyText = document.querySelector("#textoutput");
       	copyText.select();
       	copyText.setSelectionRange(0, copyText.value.length);
       	document.execCommand("copy");

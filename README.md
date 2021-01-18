@@ -11,3 +11,4 @@
 - [URL Encoder](https://nimityx.github.io/omnitools/url-encoder.html)
 - [URL Decoder](https://nimityx.github.io/omnitools/url-decoder.html)
 - [What is my IP address](https://nimityx.github.io/omnitools/what-is-my-ip.html)
+- [What is my Browser User Agent](https://nimityx.github.io/omnitools/what-is-my-browser.html)

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What is my Browser User Agent - Omnitools</title>
+<link href="https://nimityx.github.io/omnitools/style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>What is my Browser User Agent</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<label class="label">Your Browser User Agent:</label><br>
+            <label id="browser"></label><br>
+        </div>
+    </div>
+  </center>
+  <script>
+  	document.getElementById("browser").innerHTML = navigator.userAgent;
+  </script>
+</body>
+</html>

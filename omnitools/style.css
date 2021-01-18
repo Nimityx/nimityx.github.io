@@ -11,7 +11,7 @@ label {
 	color: black;
     vertical-align: middle;
 }
-h2, h3, label {
+h2, h3, label, textarea {
     font-family: Arial, Helvetica, sans-serif;
 }
 .maxwidth {
@@ -84,7 +84,7 @@ div.form {
   background-color: #f2f2f2;
   padding: 20px;
 }
-input[type=text], input[type=number] {
+input[type=text], input[type=number], textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -92,6 +92,10 @@ input[type=text], input[type=number] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+textarea {
+  height: 100px;
+  resize: vertical;
 }
 .switchtoggle {
   position: relative;

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clock - Omnitools</title>
+<link href="https://nimityx.github.io/omnitools/style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>Clock</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<label id="time"></label><br>
+            <label id="date"></label><br>
+            <label>(dd/mm/yyyy)</label><br>
+        </div>
+    </div>
+  </center>
+  <script>
+    var d = new Date();
+    document.getElementById("time").innerHTML = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ":" + ("0" + d.getSeconds()).slice(-2);
+        document.getElementById("date").innerHTML = ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2) + "/" + d.getFullYear();
+  	setInterval(function(){
+    	var d = new Date();
+        document.getElementById("time").innerHTML = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ":" + ("0" + d.getSeconds()).slice(-2);
+        document.getElementById("date").innerHTML = ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2) + "/" + d.getFullYear();
+    }, 1000);
+  </script>
+</body>
+</html>

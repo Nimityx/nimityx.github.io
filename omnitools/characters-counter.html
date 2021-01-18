@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Characters Counter - Omnitools</title>
+<link href="https://nimityx.github.io/omnitools/style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>Characters Counter</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<label for="textinput" class="label">Text Input:</label>
+            <textarea id="textinput" name="textinput" placeholder="Input Text"></textarea>
+            <label id="chara">0 Characters</label><br>
+            <label id="words">0 Words</label><br>
+            <label id="charw">0 Characters without space</label><br>
+            <label id="parag">0 Paragraphs</label><br>
+        </div>
+    </div>
+  </center>
+  <script>
+  	document.querySelector("#textinput").onkeyup = function() {
+      document.querySelector("#chara").innerHTML = document.querySelector("#textinput").value.length + " Characters";
+      var obj = document.querySelector("#textinput").value.replace(/\n/g," ").split(" ");
+      Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
+      obj = obj.filter(function(x) { return x !== null });
+      document.querySelector("#words").innerHTML = obj.length + " Words";
+      document.querySelector("#charw").innerHTML = document.querySelector("#textinput").value.replace(/\n/g,"").replace(/ /g,"").length + " Characters without space";
+      var obj = document.querySelector("#textinput").value.split("\n");
+      Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
+      obj = obj.filter(function(x) { return x !== null });
+      document.querySelector("#parag").innerHTML = obj.length + " Paragraphs";
+    }
+    document.querySelector("#textinput").onkeydown = function() {
+      document.querySelector("#chara").innerHTML = document.querySelector("#textinput").value.length + " Characters";
+      var obj = document.querySelector("#textinput").value.replace(/\n/g," ").split(" ");
+      Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
+      obj = obj.filter(function(x) { return x !== null });
+      document.querySelector("#words").innerHTML = obj.length + " Words";
+      document.querySelector("#charw").innerHTML = document.querySelector("#textinput").value.replace(/\n/g,"").replace(/ /g,"").length + " Characters without space";
+      var obj = document.querySelector("#textinput").value.split("\n");
+      Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
+      obj = obj.filter(function(x) { return x !== null });
+      document.querySelector("#parag").innerHTML = obj.length + " Paragraphs";
+    }
+  </script>
+</body>
+</html>

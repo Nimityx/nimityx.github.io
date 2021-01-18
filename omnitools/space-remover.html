@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Space Remover - Omnitools</title>
+<link href="https://nimityx.github.io/omnitools/style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>Space Remover</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<form id="space_remover">
+        	<label for="urlinput" class="label">Text Input:</label>
+            <textarea id="urlinput" name="urlinput" placeholder="Input Text"></textarea>
+            <label for="urloutput" class="label">Result:</label>
+            <textarea id="urloutput" name="urloutput" placeholder="Result" readonly></textarea>
+            <input type="button" id="space" value="Remove Space">
+            <label for="switchtoggle">Live Mode: </label>
+          	<label class="switchtoggle" id="switchtoggle">
+            	<input type="radio" form="space_remover" name="live_mode" id="ispace">
+            	<div class="slidertogglerp roundshaped"></div>
+          	</label>
+            <br><br>
+            <input type="button" id="spacelinebreak" value="Remove Space & Line Break">
+            <label for="switchtoggle">Live Mode: </label>
+          	<label class="switchtoggle" id="switchtoggle">
+            	<input type="radio" form="space_remover" name="live_mode" id="ispacelinebreak">
+            	<div class="slidertogglerp roundshaped"></div>
+          	</label>
+            <br><br>
+            <input type="button" id="copy" value="Copy Result">
+            </form>
+        </div>
+    </div>
+  </center>
+  <script>
+  	document.querySelector("#space").onclick = function() {
+    	document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+    }
+    document.querySelector("#spacelinebreak").onclick = function() {
+    	document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+    }
+    function sliveModeOn() {
+      document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+    	document.querySelector("#urlinput").onkeyup = function() {
+        	document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+        }
+        document.querySelector("#urlinput").onkeydown = function() {
+        	document.querySelector("#urloutput").value = document.querySelector("#urlinput").value.replace(/ /g,"");
+        }
+    }
+    function slbliveModeOn() {
+      document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+    	document.querySelector("#urlinput").onkeyup = function() {
+        	document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+        }
+        document.querySelector("#urlinput").onkeydown = function() {
+        	document.querySelector("#urloutput").value = (document.querySelector("#urlinput").value.replace(/\n/g,"")).replace(/ /g,"");
+        }
+    }
+    function liveModeOff() {
+    	document.querySelector("#urlinput").onkeyup = function() {}
+        document.querySelector("#urlinput").onkeydown = function() {}
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var checkbox = document.querySelector('input#ispace');
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          sliveModeOn();
+        } else {
+          liveModeOff();
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      var checkbox = document.querySelector('input#ispacelinebreak');
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          slbliveModeOn();
+        } else {
+          liveModeOff();
+        }
+      });
+    });
+    document.querySelector("#copy").onclick = function() {
+      	var copyText = document.querySelector("#urloutput");
+      	copyText.select();
+      	copyText.setSelectionRange(0, 99999);
+      	document.execCommand("copy");
+    }
+  </script>
+</body>
+</html>

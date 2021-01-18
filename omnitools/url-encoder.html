@@ -56,7 +56,7 @@
     document.querySelector("#copy").onclick = function() {
       	var copyText = document.querySelector("#urloutput");
       	copyText.select();
-      	copyText.setSelectionRange(0, 99999);
+      	copyText.setSelectionRange(0, document.querySelector("#urloutput").value.length);
       	document.execCommand("copy");
     }
   </script>

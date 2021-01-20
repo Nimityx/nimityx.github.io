@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>What is my IP - Omnitools</title>
-<link href="https://nimityx.github.io/omnitools/style.css" type="text/css" rel="stylesheet">
+<link href="assets/style.css" type="text/css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
 </head>
 <body class="bgcolor">
@@ -23,29 +23,6 @@
         </div>
     </div>
   </center>
-  <script>
-  	const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    function requestipspec(ip) {
-    	document.querySelector("#ip").innerHTML = ip;
-        var url = "http://ip-api.com/json/" + ip + "?fields=16974545";
-        fetch(proxyurl + url)
-        .then(response => response.text())
-        .then(contents => {
-        	document.querySelector("#city").innerHTML = "City: " + JSON.parse(contents).city;
-            document.querySelector("#country").innerHTML = "Country: " + JSON.parse(contents).country;
-            document.querySelector("#coord").innerHTML = "Coordinates: " + JSON.parse(contents).lat + ", " + JSON.parse(contents).lon;
-            document.querySelector("#isp").innerHTML = "ISP: " + JSON.parse(contents).isp;
-            document.querySelector("#mobile").innerHTML = "Mobile: " + JSON.parse(contents).mobile;
-            document.querySelector("#proxy").innerHTML = "Proxy: " + JSON.parse(contents).proxy;
-            document.querySelector("#hosting").innerHTML = "Hosting: " + JSON.parse(contents).hosting;
-        })
-        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
-    }
-    var url = "https://api.ipify.org/";
-    fetch(proxyurl + url)
-    .then(response => response.text())
-    .then(contents => requestipspec(contents))
-    .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
-  </script>
+  <script src="assets/what-is-my-ip.js"></script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 /*
-* screen-color.js
-* https://github.com/Nimityx/omnitools/blob/main/src/assets/screen-color.js
-* https://github.com/Nimityx/omnitools/blob/main/src/screen-color.html
-* https://nimityx.github.io/omnitools/screen-color.html
+* screen-light.js
+* https://github.com/Nimityx/omnitools/blob/main/src/assets/screen-light.js
+* https://github.com/Nimityx/omnitools/blob/main/src/screen-light.html
+* https://nimityx.github.io/omnitools/screen-light.html
 * 
 * By Nimityx, https://github.com/Nimityx
 *

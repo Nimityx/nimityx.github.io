@@ -9,6 +9,7 @@
 - [Characters Counter](https://nimityx.github.io/omnitools/characters-counter.html)
 - [Clock](https://nimityx.github.io/omnitools/clock.html)
 - [Color Picker](https://nimityx.github.io/omnitools/color-picker.html)
+- [Hex RGB Converter](https://nimityx.github.io/omnitools/hex-rgb-converter.html)
 - [Screen Light](https://nimityx.github.io/omnitools/screen-light.html)
 - [Space Remover](https://nimityx.github.io/omnitools/space-remover.html)
 - [URL Encoder](https://nimityx.github.io/omnitools/url-encoder.html)

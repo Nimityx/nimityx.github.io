@@ -48,18 +48,27 @@ var hex12 = "__";
 var hex34 = "__";
 var hex56 = "__";
 function hexab() {
-	document.getElementById('output4').value = "";
-	hex12 = ("0" + parseInt(document.getElementById('input2').value).toString(16)).slice(-2);
+    document.getElementById('output4').value = "";
+    hex12 = ("0" + parseInt(document.getElementById('input2').value).toString(16)).slice(-2);
+    if (hex12 == "aN") {
+    	hex12 = "__";
+    }
     document.getElementById('output4').value = hex12.toString() + hex34.toString() + hex56.toString();
 }
 function hexcd() {
-	document.getElementById('output4').value = "";
-	hex34 = ("0" + parseInt(document.getElementById('input3').value).toString(16)).slice(-2);
+    document.getElementById('output4').value = "";
+    hex34 = ("0" + parseInt(document.getElementById('input3').value).toString(16)).slice(-2);
+    if (hex34 == "aN") {
+    	hex34 = "__";
+    }
     document.getElementById('output4').value = hex12.toString() + hex34.toString() + hex56.toString();
 }
 function hexef() {
-	document.getElementById('output4').value = "";
-	hex56 = ("0" + parseInt(document.getElementById('input4').value).toString(16)).slice(-2);
+    document.getElementById('output4').value = "";
+    hex56 = ("0" + parseInt(document.getElementById('input4').value).toString(16)).slice(-2);
+    if (hex56 == "aN") {
+    	hex56 = "__";
+    }
     document.getElementById('output4').value = hex12.toString() + hex34.toString() + hex56.toString();
 }
 function copyText(a) {

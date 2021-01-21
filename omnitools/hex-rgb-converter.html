@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hex RGB Converter - Omnitools</title>
+<link href="assets/hex-rgb-converter.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>Hex RGB Converter</h2>
+    <div class="maxwidth">
+    	<div class="form">
+        	<div id="hextorgb">
+            	<label for="hex">Hex:</label><br>
+                <label for="input1">#</label>
+                <input type="text" id="input1" size="4" maxlength="6">
+                <input type="button" id="swaptorgbtohex" value="Swap">
+                <label for="hex">RGB:</label><br>
+                <label for="input2">rgb(</label>
+                <input type="number" id="output1" size="1" min="1" max="255" maxlength="3" readonly>
+                <label for="input3">,</label>
+                <input type="number" id="output2" size="1" min="1" max="255" maxlength="3" readonly>
+                <label for="input4">,</label>
+                <input type="number" id="output3" size="1" min="1" max="255" maxlength="3" readonly>
+                <label>)</label>
+                <input type="button" id="copyrgb" value="Copy Result">
+            </div>
+            <div id="rgbtohex">
+                <label for="hex">RGB:</label><br>
+                <label for="input2">rgb(</label>
+                <input type="number" id="input2" size="1" min="1" max="255" maxlength="3" onkeyup="hexab()" onchange="hexab()">
+                <label for="input3">,</label>
+                <input type="number" id="input3" size="1" min="1" max="255" maxlength="3" onkeyup="hexcd()" onchange="hexcd()">
+                <label for="input4">,</label>
+                <input type="number" id="input4" size="1" min="1" max="255" maxlength="3" onkeyup="hexef()" onchange="hexef()">
+                <label>)</label>
+                <input type="button" id="swaptohextorgb" value="Swap">
+                <label for="hex">Hex:</label><br>
+                <label for="input1">#</label>
+                <input type="text" value="______" id="output4" size="4" maxlength="6" readonly>
+                <input type="button" id="copyhex" value="Copy Result">
+            </div>
+        </div>
+    </div>
+  </center>
+  <script src="assets/hex-rgb-converter.js"></script>
+</body>
+</html>

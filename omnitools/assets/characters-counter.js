@@ -9,19 +9,7 @@
 * License : https://github.com/Nimityx/omnitools/blob/main/LICENSE (AGPL-3.0)
 * source  : https://github.com/Nimityx/omnitools
 */
-document.querySelector("#textinput").onkeyup = function() {
-  document.querySelector("#chara").innerHTML = document.querySelector("#textinput").value.length + " Characters";
-  var obj = document.querySelector("#textinput").value.replace(/\n/g," ").split(" ");
-  Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
-  obj = obj.filter(function(x) { return x !== null });
-  document.querySelector("#words").innerHTML = obj.length + " Words";
-  document.querySelector("#charw").innerHTML = document.querySelector("#textinput").value.replace(/\n/g,"").replace(/ /g,"").length + " Characters without space";
-  var obj = document.querySelector("#textinput").value.split("\n");
-  Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
-  obj = obj.filter(function(x) { return x !== null });
-  document.querySelector("#parag").innerHTML = obj.length + " Paragraphs";
-}
-document.querySelector("#textinput").onkeydown = function() {
+document.querySelector("#textinput").oninput = function() {
   document.querySelector("#chara").innerHTML = document.querySelector("#textinput").value.length + " Characters";
   var obj = document.querySelector("#textinput").value.replace(/\n/g," ").split(" ");
   Object.keys(obj).forEach(k => (!obj[k] && obj[k] !== undefined) && delete obj[k]);

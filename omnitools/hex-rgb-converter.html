@@ -17,22 +17,22 @@
                 <input type="button" id="swaptorgbtohex" value="Swap">
                 <label for="hex">RGB:</label><br>
                 <label for="input2">rgb(</label>
-                <input type="number" id="output1" size="1" min="1" max="255" maxlength="3" readonly>
+                <input type="number" id="output1" size="1" min="0" max="255" maxlength="3" readonly>
                 <label for="input3">,</label>
-                <input type="number" id="output2" size="1" min="1" max="255" maxlength="3" readonly>
+                <input type="number" id="output2" size="1" min="0" max="255" maxlength="3" readonly>
                 <label for="input4">,</label>
-                <input type="number" id="output3" size="1" min="1" max="255" maxlength="3" readonly>
+                <input type="number" id="output3" size="1" min="0" max="255" maxlength="3" readonly>
                 <label>)</label>
                 <input type="button" id="copyrgb" value="Copy Result">
             </div>
             <div id="rgbtohex">
                 <label for="hex">RGB:</label><br>
                 <label for="input2">rgb(</label>
-                <input type="number" id="input2" size="1" min="1" max="255" maxlength="3" onkeyup="hexab()" onchange="hexab()">
+                <input type="number" id="input2" size="1" min="0" max="255" maxlength="3" onkeyup="hexab()" onchange="hexab()">
                 <label for="input3">,</label>
-                <input type="number" id="input3" size="1" min="1" max="255" maxlength="3" onkeyup="hexcd()" onchange="hexcd()">
+                <input type="number" id="input3" size="1" min="0" max="255" maxlength="3" onkeyup="hexcd()" onchange="hexcd()">
                 <label for="input4">,</label>
-                <input type="number" id="input4" size="1" min="1" max="255" maxlength="3" onkeyup="hexef()" onchange="hexef()">
+                <input type="number" id="input4" size="1" min="0" max="255" maxlength="3" onkeyup="hexef()" onchange="hexef()">
                 <label>)</label>
                 <input type="button" id="swaptohextorgb" value="Swap">
                 <label for="hex">Hex:</label><br>
